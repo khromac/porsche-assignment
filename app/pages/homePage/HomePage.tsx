@@ -73,9 +73,7 @@ const CarCard = ({
                 <h2 className="text-xl font-semibold">{name}</h2>
                 <p className="text-md font-light">{description}</p>
 
-                <div className="badge px-3 py-1 rounded-full bg-gray-200 text-green-800 text-xs font-semibold uppercase w-fit">
-                    {engineType}
-                </div>
+                <Badge value={engineType} />
 
                 <Button type="secondary" size="large"/>
                 <Button type="primary" size="large"/>
@@ -84,11 +82,23 @@ const CarCard = ({
     );
 }
 
+type BadgeProps = {
+    value: string;
+};
+
+const Badge = ({ value }: BadgeProps) => {
+    return (
+        <div className="badge px-3 py-1 rounded-full bg-gray-200 text-green-800 text-xs font-semibold uppercase w-fit">
+            {value}
+        </div>
+    );
+}
+
 type ButtonProps = {
     type?: "primary" | "secondary";
     size?: "small" | "large";
     disabled?: boolean;
-}
+};
 
 const Button = ({
     type = "primary",
