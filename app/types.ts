@@ -15,3 +15,5 @@ export type ButtonProps = {
     disabled?: boolean;
 };
 
+export type SelectProps = {
+};

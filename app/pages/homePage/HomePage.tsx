@@ -1,9 +1,11 @@
 import porscheLogo from "../../assets/images/porsche-logo.webp"
 import Hero1 from "../../assets/images/hero-1.jpg";
 import Card from "~/components/Card";
+import Select from "~/components/Select";
 
 
 export function HomePage() {
+
     return (
         <>
             <nav className="grid grid-cols-3 py-4 px-5">
@@ -44,12 +46,7 @@ export function HomePage() {
                         <h1 className="text-2xl font-bold">Available models</h1>
                         <div className="flex flex-row justify-self-end">
                             <h1 className="text-2xl font-bold ">Filter:</h1>
-                            <select className="ml-2 px-2 py-1 rounded-lg bg-gray-200 text-gray-700">
-                                <option value="all">All</option>
-                                <option value="electric">Electric</option>
-                                <option value="hybrid">Hybrid</option>
-                                <option value="petrol">Petrol</option>
-                            </select>
+                            <Select/>
                         </div>
 
                     </div>
