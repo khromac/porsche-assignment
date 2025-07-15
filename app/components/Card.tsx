@@ -1,5 +1,5 @@
 import Porsche911 from "~/assets/images/porsche-911-gt3.webp";
-import type {CarCardProps} from "~/types";
+import type {CardProps} from "~/types";
 import Badge from "~/components/Badge";
 import Button from "~/components/Button";
 
@@ -9,7 +9,7 @@ const Card = ({
                   description = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                   image = Porsche911,
                   engineType = "electric"
-              }: CarCardProps) => {
+              }: CardProps) => {
     return (
         <div className="min-w-80 bg-gray-100 rounded-lg shadow-lg flex flex-col items-start ">
             <img src={image} alt="Porsche 911 Carrera" className="w-full h-auto object-cover rounded-lg"/>
