@@ -1,6 +1,6 @@
 import porscheLogo from "../../assets/images/porsche-logo.webp"
 import Hero1 from "../../assets/images/hero-1.jpg";
-import Porsche911 from "../../assets/images/porsche-911-gt3.webp";
+import Card from "~/components/Card";
 
 
 export function HomePage() {
@@ -39,78 +39,28 @@ export function HomePage() {
                     </div>
                 </section>
 
-                <section className="flex flex-col justify-center w-full px-10 gap-10">
-                    <h1 className="text-2xl font-bold">Available models</h1>
-                    <div className="flex flex-row flex-nowrap overflow-x-auto space-x-4 scrollbar scrollbar-thumb-gray-400 py-4">
-                        <CarCard />
-                        <CarCard />
-                        <CarCard />
-                        <CarCard />
+                <section className="flex flex-col justify-center w-full px-10 gap-10 mt-4">
+                    <div className="grid grid-cols-2">
+                        <h1 className="text-2xl font-bold">Available models</h1>
+                        <div className="flex flex-row justify-self-end">
+                            <h1 className="text-2xl font-bold ">Filter:</h1>
+                            <select className="ml-2 px-2 py-1 rounded-lg bg-gray-200 text-gray-700">
+                                <option value="all">All</option>
+                                <option value="electric">Electric</option>
+                                <option value="hybrid">Hybrid</option>
+                                <option value="petrol">Petrol</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div
+                        className="flex flex-row flex-nowrap overflow-x-auto space-x-4 scrollbar scrollbar-thumb-gray-400 py-4">
+                        <Card/>
+                        <Card/>
+                        <Card/>
                     </div>
                 </section>
             </main>
         </>
-    );
-}
-
-type CarCardProps = {
-    name?: string,
-    description?: string,
-    image?: string,
-    engineType?: "electric" | "hybrid" | "petrol";
-}
-
-const CarCard = ({
-    name = "Porsche 911 Carrera",
-    description = "Car description",
-    image = Porsche911,
-    engineType = "electric"
-}: CarCardProps) => {
-    return (
-        <div className="min-w-80 bg-gray-100 rounded-lg shadow-lg flex flex-col items-start ">
-            <img src={image} alt="Porsche 911 Carrera" className="w-full h-auto object-cover rounded-lg"/>
-            <div className="px-5 py-5 flex flex-col items-start gap-2">
-                <h2 className="text-xl font-semibold">{name}</h2>
-                <p className="text-md font-light">{description}</p>
-
-                <Badge value={engineType} />
-
-                <Button type="secondary" size="large"/>
-                <Button type="primary" size="large"/>
-            </div>
-        </div>
-    );
-}
-
-type BadgeProps = {
-    value: string;
-};
-
-const Badge = ({ value }: BadgeProps) => {
-    return (
-        <div className="badge px-3 py-1 rounded-full bg-gray-200 text-green-800 text-xs font-semibold uppercase w-fit">
-            {value}
-        </div>
-    );
-}
-
-type ButtonProps = {
-    type?: "primary" | "secondary";
-    size?: "small" | "large";
-    disabled?: boolean;
-};
-
-const Button = ({
-    type = "primary",
-    size = "large",
-    disabled = false }: ButtonProps) => {
-
-    const buttonStyle: string = type === "primary" ? "bg-red-600 hover:bg-red-300 text-white" : "bg-neutral-300 hover:bg-neutral-700 text-gray-700 hover:text-neutral-100";
-    const sizeStyle: string = size === "small" ? "text-sm px-2 py-1" : "px-4 py-2";
-
-    return (
-        <button className={`rounded-lg ${sizeStyle} ${buttonStyle} transition`} disabled={disabled}>
-            Learn more
-        </button>
     );
 }
