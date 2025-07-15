@@ -1,4 +1,3 @@
-import porscheLogo from "../../assets/images/porsche-logo.webp"
 import Hero1 from "../../assets/images/hero-1.jpg";
 import Card from "~/components/Card";
 import Select from "~/components/Select";
@@ -8,11 +7,6 @@ export function HomePage() {
 
     return (
         <>
-            <nav className="grid grid-cols-3 py-4 px-5">
-                <h3 className="">Menu</h3>
-                <img src={porscheLogo} alt="porsche logo" width="200px" className="justify-self-center"/>
-                <h3 className="justify-self-end">Porsche Centar Zagreb</h3>
-            </nav>
             <main className="flex items-center justify-center flex-col gap-4">
                 {/*HERO SECTION*/}
                 <section className="flex flex-col justify-center w-full">
