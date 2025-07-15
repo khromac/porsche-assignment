@@ -12,6 +12,8 @@ export type BadgeProps = {
 export type ButtonProps = {
     type?: "primary" | "secondary";
     size?: "small" | "large";
+    children?: React.ReactNode;
+    className?: string;
     disabled?: boolean;
 };
 
