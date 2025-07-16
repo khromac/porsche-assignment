@@ -4,20 +4,25 @@ import PorscheTaycan from "../../assets/images/porsche-model-taycan.jpeg";
 import Porsche718 from "../../assets/images/porsche-model-718.jpeg";
 import Card from "~/components/Card";
 import Select from "~/components/Select";
-import type {CardProps} from "~/types";
+import type {CardProps, EngineModel} from "~/types";
 import {useState} from "react";
 
 
 export function HomePage() {
-
-    const [hovered, setHovered] = useState<null | number>(null);
+    const [filter, setFilter] = useState<string>("all");
+    const engineModels: Record<EngineModel, string> = {
+        all: "All",
+        electric: "Electric",
+        hybrid: "Hybrid",
+        petrol: "Petrol",
+    }
 
     const carModels: Record<string, CardProps> = {
         'porsche-911': {
             name: 'Porsche 911',
             description: 'Iconic sports car with rear engine: 2 doors',
             image: Porsche911,
-            engineType: "petrol"
+            engineType: "hybrid"
         },
         'porsche-taycan': {
             name: 'Porsche Taycan',
@@ -29,7 +34,7 @@ export function HomePage() {
             name: 'Porsche 718',
             description: 'Precise mid-engine sports car',
             image: Porsche718,
-            engineType: "petrol"
+            engineType: "electric"
         },
         'porsche-719': {
             name: 'Porsche 748',
@@ -74,7 +79,7 @@ export function HomePage() {
                         <h1 className="text-2xl font-bold">Available models</h1>
                         <div className="flex flex-row justify-self-end">
                             <h1 className="text-2xl font-bold ">Filter:</h1>
-                            <Select/>
+                            <Select options={engineModels} onChange={setFilter} value={filter}/>
                         </div>
 
                     </div>
