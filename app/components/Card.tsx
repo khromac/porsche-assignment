@@ -17,7 +17,7 @@ const Card = ({
                 w-[300px] h-[400px]
                 sm:w-[550px] sm:h-[550px]
                 md:w-[600px] md:h-[650px]
-                lg:min-w-[calc(50%-4rem)] lg:h-[300px]
+                lg:min-w-[calc(50%-4rem)] lg:h-[500px]
                 lg:flex-1
                 lg:hover:flex-[1.2]
                 group-hover:lg:flex-[0.9]
