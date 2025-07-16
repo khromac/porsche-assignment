@@ -27,7 +27,7 @@ export function HomePage() {
                     <img src={Hero1} alt="porsche dealership" className="w-full h-[98dvh] object-cover shadow-lg" />
                     <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-b from-transparent to-black/60 pointer-events-none" />
                     <div className="absolute bottom-[10%] left-[10%] flex flex-col items-start justify-end font-bold text-white">
-                        <h1 className="text-4xl md:text-5xl font-medium">More than a feeling</h1>
+                        <h1 className="text-4xl md:text-5xl font-medium lg:text-7xl">More than a feeling</h1>
                         <p className="text-2xl font-light">Welcome.</p>
                     </div>
                 </div>
