@@ -1,11 +1,12 @@
 import porscheLogoText from "~/assets/images/porsche-logo-text.svg";
 import porscheLogoSymbol from "~/assets/images/porsche-logo-symbol.webp";
+import type {NavBarProps} from "~/types";
 
-const NavBar = () => {
+const NavBar = ({ toggleMenu }:NavBarProps) => {
 
     return (
         <nav className="grid grid-cols-3 items-center py-4 px-5">
-            <div className="flex items-center gap-2 justify-self-start">
+            <div className="flex items-center gap-2 justify-self-start" onClick={toggleMenu}>
                 <i className="fa-solid fa-bars"></i>
                 <p className="hidden sm:block">Menu</p>
             </div>
