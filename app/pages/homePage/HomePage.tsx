@@ -5,14 +5,17 @@ import Porsche718 from "../../assets/images/porsche-model-718.jpeg";
 import Card from "~/components/Card";
 import Select from "~/components/Select";
 import type {CardProps} from "~/types";
+import {useState} from "react";
 
 
 export function HomePage() {
 
+    const [hovered, setHovered] = useState<null | number>(null);
+
     const carModels: Record<string, CardProps> = {
         'porsche-911': {
             name: 'Porsche 911',
-            description: 'Iconic sports car with a rich heritage, known for its performance and design.',
+            description: 'Iconic sports car with rear engine: 2 doors',
             image: Porsche911,
             engineType: "petrol"
         },
@@ -24,7 +27,13 @@ export function HomePage() {
         },
         'porsche-718': {
             name: 'Porsche 718',
-            description: 'Precise mid-engine sports car with a focus on agility and performance.',
+            description: 'Precise mid-engine sports car',
+            image: Porsche718,
+            engineType: "petrol"
+        },
+        'porsche-719': {
+            name: 'Porsche 748',
+            description: 'Precise mid-engine sports car with a',
             image: Porsche718,
             engineType: "petrol"
         },
@@ -60,7 +69,7 @@ export function HomePage() {
                     </div>
                 </section>
 
-                <section className="flex flex-col justify-center w-full px-[4rem] gap-10 mt-4 my-10">
+                <section className="flex flex-col justify-center w-full px-8 md:px-16 gap-10 mt-4 my-10">
                     <div className="grid grid-cols-2">
                         <h1 className="text-2xl font-bold">Available models</h1>
                         <div className="flex flex-row justify-self-end">
@@ -69,18 +78,16 @@ export function HomePage() {
                         </div>
 
                     </div>
-                    <div className="flex flex-row justify-center gap-10 overflow-x-auto lg:flex-wrap lg:overflow-x-visible">
-                        {
-                            Object.entries(carModels).map(([key, model]) => (
+                    <div className="group flex flex-col justify-center items-center gap-5 overflow-x-auto lg:flex-row lg:flex-wrap">
+                        {Object.entries(carModels).map(([key, model]) => (
                                 <Card
-                                    key={key}
                                     name={model.name}
                                     description={model.description}
                                     image={model.image}
                                     engineType={model.engineType}
+                                    key={key}
                                 />
-                            ))
-                        }
+                        ))}
                     </div>
                 </section>
             </main>
