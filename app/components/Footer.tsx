@@ -10,6 +10,33 @@ const Footer = () => {
         "Compliance",
         "Newsroom & Press",
     ]
+    const socialItems = {
+        youtube: {
+            icon: "fa-brands fa-youtube",
+            link: "https://www.youtube.com/porsche"
+        },
+        linkedin: {
+            icon: "fa-brands fa-linkedin",
+            link: "https://www.linkedin.com/company/porsche"
+        },
+        pinterest: {
+            icon: "fa-brands fa-pinterest",
+            link: "https://www.pinterest.com/porsche/"
+        },
+        instagram: {
+            icon: "fa-brands fa-instagram",
+            link: "https://www.instagram.com/porsche/"
+        },
+        twitter: {
+            icon: "fa-brands fa-twitter",
+            link: "https://twitter.com/Porsche"
+        },
+        facebook: {
+            icon: "fa-brands fa-facebook",
+            link: "https://www.facebook.com/Porsche"
+        },
+
+    }
     return (
         <footer className="bg-black text-white flex flex-col gap-10 p-10 pb-0">
 
@@ -17,8 +44,11 @@ const Footer = () => {
 
             <div className="flex flex-col gap-3">
                 <h2>Current Region / Language</h2>
-                <div className="flex flex-row gap-10">
-                    <p>International / English</p>
+                <div className="flex flex-row gap-10" >
+                    <div className="flex flex-row gap-3">
+                        <i className="fa-solid fa-globe text-2xl"></i>
+                        <p>International / English</p>
+                    </div>
                     <p className="underline">Change</p>
                 </div>
             </div>
@@ -29,15 +59,21 @@ const Footer = () => {
                 <div className="flex flex-col gap-3 ">
                     <h2>Locations & Contacts</h2>
                     <p>Do you have any questions?</p>
-                    <Button type="secondary" className="w-full mt-3"/>
+                    <Button type="secondary" className="w-full mt-3 h-14"/>
                 </div>
 
                 <div className="flex flex-col gap-3 ">
                     <h2>Social Media</h2>
                     <p>Get in touch with us via social media.</p>
                     <div className="flex flex-wrap gap-2 w-70 mt-3">
-                        {Array.from({ length: 6 }).map((_, i) => (
-                            <Button key={i} type="secondary" className="w-fit">X</Button>
+                        {Object.entries(socialItems).map(([key, item]) => (
+                            <Button
+                                key={key}
+                                type="secondary"
+                                className="h-14 w-14 flex items-center justify-center text-xl"
+                                onClick={() => window.open(item.link, "_blank")}>
+                                <i className={item.icon}></i>
+                            </Button>
                         ))}
                     </div>
                 </div>
