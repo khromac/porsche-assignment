@@ -1,4 +1,4 @@
-import Porsche911 from "~/assets/images/porsche-911-gt3.webp";
+import Porsche911 from "~/assets/images/porsche-model-911.jpg";
 import type {CardProps} from "~/types";
 import Badge from "~/components/Badge";
 import Button from "~/components/Button";
@@ -11,15 +11,24 @@ const Card = ({
                   engineType = "electric"
               }: CardProps) => {
     return (
-        <div className="min-w-80 bg-gray-100 rounded-lg shadow-lg flex flex-col items-start ">
-            <img src={image} alt="Porsche 911 Carrera" className="w-full h-auto object-cover rounded-lg"/>
-            <div className="px-5 py-5 flex flex-col items-start gap-2">
-                <h2 className="text-xl font-semibold">{name}</h2>
-                <p className="text-md font-light">{description}</p>
+        <div className="w-[300px] h-[500px] lg:min-w-[calc(50%-5rem)] bg-gray-100 rounded-lg shadow-lg flex flex-col items-start border overflow-hidden relative">
+            <img
+                src={image}
+                alt={name}
+                className="w-full h-full object-cover object-center"
+            />
 
-                <Badge value={engineType}/>
-
-                <Button type="secondary" size="large"/>
+            <div className="absolute bottom-0 left-0 right-0 p-4 flex flex-col items-start justify-end w-full">
+                <div className="flex flex-col gap-2 shrink-0 w-full">
+                    <Badge value={engineType} />
+                    <h2 className="text-xl font-bold text-white">{name}</h2>
+                    <div className="flex flex-row w-full justify-between items-center gap-2">
+                        <p className="text-sm text-gray-200 ">{description}</p>
+                        <Button type="secondary" size="small">
+                            <i className="fa-solid fa-arrow-right"></i>
+                        </Button>
+                    </div>
+                </div>
             </div>
         </div>
     );
