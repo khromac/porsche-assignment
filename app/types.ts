@@ -13,6 +13,7 @@ export type ButtonProps = {
     type?: "primary" | "secondary";
     size?: "small" | "large";
     children?: React.ReactNode;
+    onClick?: () => void;
     className?: string;
     disabled?: boolean;
 };
