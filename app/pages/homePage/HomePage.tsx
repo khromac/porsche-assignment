@@ -1,23 +1,43 @@
 import Hero1 from "~/assets/images/taycan-hero.jpg";
 import Card from "~/components/Card";
+import porsche911 from "~/assets/images/porsche-model-911.jpg";
 import Select from "~/components/Select";
 import { useEffect, useState } from "react";
 import { carModels, engineModels } from "~/data/carsData";
 import type { CardProps } from "~/types";
+import Button from "~/components/Button";
 
 export function HomePage() {
     const [filter, setFilter] = useState<string>("all");
+    const [carList, setCarList] = useState<Record<string, CardProps>>(carModels);
     const [filteredCars, setFilteredCars] = useState<CardProps[]>([]);
 
+    const handleAddModel = () => {
+        const newId = "porsche-concept-x";
+        const newCar: CardProps = {
+            name: "Porsche Concept X",
+            description: "Futuristic electric car.",
+            image: porsche911,
+            engineType: "electric",
+        };
+
+        setCarList(prev => ({
+            ...prev,
+            [newId]: newCar
+        }));
+
+    };
+
+
     useEffect(() => {
-        const carsArray = Object.values(carModels);
+        const carsArray = Object.values(carList);
         if (filter === "all") {
             setFilteredCars(carsArray);
         } else {
             const filtered = carsArray.filter(car => car.engineType === filter);
             setFilteredCars(filtered);
         }
-    }, [filter]);
+    }, [filter, carList]);
 
     return (
         <main className="flex items-center justify-center flex-col gap-4">
@@ -38,9 +58,12 @@ export function HomePage() {
                     Where Your journey begins.
                 </h1>
 
-                <div className="flex flex-row items-center justify-end gap-4">
-                    <p>Filter:</p>
-                    <Select options={engineModels} onChange={setFilter} value={filter} />
+                <div className="flex flex-row items-center justify-between gap-4">
+                    <div className="flex flex-row items-center gap-4">
+                        <p>Filter:</p>
+                        <Select options={engineModels} onChange={setFilter} value={filter} />
+                    </div>
+                    <Button onClick={handleAddModel}>Add model</Button>
                 </div>
 
                 <div className="group flex flex-col justify-center items-center gap-5 overflow-x-auto lg:flex-row lg:flex-wrap">
