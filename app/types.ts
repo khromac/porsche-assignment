@@ -32,3 +32,12 @@ export type SelectProps = {
 export type CardWrapperProps = {
     children: ReactNode;
 }
+
+export type SideMenuProps = {
+    isOpen: boolean;
+    toggleMenu: () => void;
+}
+
+export type NavBarProps = {
+    toggleMenu: () => void;
+};

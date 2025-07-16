@@ -11,6 +11,9 @@ import type { Route } from "./+types/root";
 import "./app.css";
 import NavBar from "~/components/NavBar";
 import Footer from "~/components/Footer";
+import SideMenu from "~/components/SideMenu";
+import {useState} from "react";
+
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -51,13 +54,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return (
-      <>
-        <NavBar/>
-        <Outlet />
-        <Footer/>
-      </>
-  );
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+    return (
+        <>
+            <NavBar toggleMenu={() => setIsOpen((prev) => !prev)} />
+            <SideMenu toggleMenu={() => setIsOpen((prev) => !prev)} isOpen={isOpen} />
+            <Outlet />
+            <Footer/>
+        </>
+    );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
