@@ -1,14 +1,36 @@
-import type {SelectProps} from "~/types";
+import type { SelectProps } from "~/types";
 
-const Select = ({}: SelectProps) => {
+const Select = ({
+    options,
+    onChange,
+    value = "all",
+    className = "",
+}: SelectProps) => {
     return (
-        <select className="ml-2 px-2 py-1 rounded-lg bg-gray-200 text-gray-700">
-            <option value="all">All</option>
-            <option value="electric">Electric</option>
-            <option value="hybrid">Hybrid</option>
-            <option value="petrol">Petrol</option>
+        <select
+            className={`
+                bg-gray-800 text-white 
+                border border-gray-600 
+                rounded-lg px-4 py-2 
+                focus:outline-none focus:ring-2 focus:ring-red-500 
+                hover:border-red-500
+                transition duration-150 ease-in-out
+                ${className}
+              `}
+            onChange={(e) => onChange(e.target.value)}
+            value={value}
+        >
+            {Object.entries(options).map(([key, label]) => (
+                <option
+                    key={key}
+                    value={key}
+                    className="bg-gray-800 text-white"
+                >
+                    {label}
+                </option>
+            ))}
         </select>
     );
-}
+};
 
 export default Select;

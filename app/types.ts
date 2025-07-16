@@ -17,5 +17,11 @@ export type ButtonProps = {
     disabled?: boolean;
 };
 
+export type EngineModel = "all" | "electric" | "hybrid" | "petrol";
+
 export type SelectProps = {
+    options: Record<string, string>;
+    onChange: (value: string) => void;
+    value?: string;
+    className?: string;
 };
