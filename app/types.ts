@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 export type CardProps = {
     name?: string,
     description?: string,
@@ -12,7 +14,7 @@ export type BadgeProps = {
 export type ButtonProps = {
     type?: "primary" | "secondary";
     size?: "small" | "large";
-    children?: React.ReactNode;
+    children?: ReactNode;
     onClick?: () => void;
     className?: string;
     disabled?: boolean;
@@ -26,3 +28,7 @@ export type SelectProps = {
     value?: string;
     className?: string;
 };
+
+export type CardWrapperProps = {
+    children: ReactNode;
+}

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { carModels, engineModels } from "~/data/carsData";
 import type { CardProps } from "~/types";
 import Button from "~/components/Button";
+import CardWrapper from "~/components/CardWrapper";
 
 export function HomePage() {
     const [filter, setFilter] = useState<string>("all");
@@ -66,7 +67,7 @@ export function HomePage() {
                     <Button onClick={handleAddModel}>Add model</Button>
                 </div>
 
-                <div className="group flex flex-col justify-center items-center gap-5 overflow-x-auto lg:flex-row lg:flex-wrap">
+                <CardWrapper>
                     {filteredCars.map((model, index) => (
                         <Card
                             key={index}
@@ -76,7 +77,7 @@ export function HomePage() {
                             engineType={model.engineType}
                         />
                     ))}
-                </div>
+                </CardWrapper>
             </section>
         </main>
     );
