@@ -1,6 +1,7 @@
 import Porsche911 from "~/assets/images/porsche-model-911.jpg";
 import PorscheTaycan from "~/assets/images/porsche-model-taycan.jpeg";
 import Porsche718 from "~/assets/images/porsche-model-718.jpeg";
+import PorschePanamera from "~/assets/images/porsche-model-panamera.jpg";
 import type { CardProps, EngineModel } from "~/types";
 
 export const engineModels: Record<EngineModel, string> = {
@@ -15,24 +16,24 @@ export const carModels: Record<string, CardProps> = {
         name: "Porsche 911",
         description: "Iconic sports car with rear engine: 2 doors",
         image: Porsche911,
-        engineType: "hybrid",
+        engineType: "petrol",
     },
     "porsche-taycan": {
         name: "Porsche Taycan",
         description: "Electric sports car: 4 doors",
         image: PorscheTaycan,
-        engineType: "petrol",
+        engineType: "electric",
     },
     "porsche-718": {
         name: "Porsche 718",
         description: "Precise mid-engine sports car",
         image: Porsche718,
-        engineType: "electric",
-    },
-    "porsche-719": {
-        name: "Porsche 748",
-        description: "Precise mid-engine sports car with a",
-        image: Porsche718,
         engineType: "petrol",
+    },
+    "porsche-panamera": {
+        name: "Porsche Panamera",
+        description: "Precise mid-engine sports car with a",
+        image: PorschePanamera,
+        engineType: "hybrid",
     },
 };
