@@ -1,11 +1,27 @@
-import porscheLogo from "~/assets/images/porsche-logo.svg";
+import porscheLogoText from "~/assets/images/porsche-logo-text.svg";
+import porscheLogoSymbol from "~/assets/images/porsche-logo-symbol.webp";
 
 const NavBar = () => {
+
     return (
         <nav className="grid grid-cols-3 items-center py-4 px-5">
-            <p className="">Menu</p>
-            <img src={porscheLogo} alt="porsche logo" width="200px" className="justify-self-center"/>
-            <p className="justify-self-end">Porsche Centar Zagreb</p>
+            <div className="flex items-center gap-2 justify-self-start">
+                <i className="fa-solid fa-bars"></i>
+                <p className="hidden sm:block">Menu</p>
+            </div>
+            <img
+                src={porscheLogoSymbol}
+                alt="porsche logo"
+                width="30"
+                className="justify-self-center sm:hidden"
+            />
+            <img
+                src={porscheLogoText}
+                alt="porsche logo"
+                width="200"
+                className="justify-self-center hidden sm:block"
+            />
+            <i className="fa-regular fa-user justify-self-end"></i>
         </nav>
     );
 }

@@ -1,5 +1,5 @@
 import Button from "~/components/Button";
-import PorscheLogo from "~/assets/images/porsche-logo.svg"
+import PorscheLogo from "~/assets/images/porsche-logo-text.svg"
 import React from "react";
 
 const Footer = () => {
@@ -25,7 +25,7 @@ const Footer = () => {
 
             {/*Locations & Contacts and Social Media section*/}
 
-            <div className="flex flex-row gap-10">
+            <div className="flex flex-col lg:flex-row gap-10">
                 <div className="flex flex-col gap-3 ">
                     <h2>Locations & Contacts</h2>
                     <p>Do you have any questions?</p>
