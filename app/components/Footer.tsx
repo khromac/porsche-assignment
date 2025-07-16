@@ -40,8 +40,6 @@ const Footer = () => {
     return (
         <footer className="bg-black text-white flex flex-col gap-10 p-10 pb-0">
 
-            {/*Current region section*/}
-
             <div className="flex flex-col gap-3">
                 <h2>Current Region / Language</h2>
                 <div className="flex flex-row gap-10" >
@@ -52,8 +50,6 @@ const Footer = () => {
                     <p className="underline">Change</p>
                 </div>
             </div>
-
-            {/*Locations & Contacts and Social Media section*/}
 
             <div className="flex flex-col lg:flex-row gap-10">
                 <div className="flex flex-col gap-3 ">
@@ -80,8 +76,6 @@ const Footer = () => {
             </div>
 
 
-            {/*Company section*/}
-
             <div className="flex flex-col gap-3 ">
                 <h2>Company</h2>
                 <div className="flex flex-wrap gap-10 w-full">
@@ -93,11 +87,11 @@ const Footer = () => {
 
             <hr className="my-10 text-neutral-600" />
 
-            {/*Legal section*/}
 
             <div className="flex flex-col gap-5">
                 <p>© 2025 Dr. Ing. h.c. F. Porsche AG</p>
-                <p>* If the values are given as ranges, these do not relate to a single, individual
+                <p>
+                    * If the values are given as ranges, these do not relate to a single, individual
                     vehicle and do not constitute part of the offer.
                     They are intended solely as a means of comparing different
                     vehicle models and refer to the product portfolio that is
@@ -105,13 +99,14 @@ const Footer = () => {
                     (attachments, tyre formats etc.) can change relevant vehicle
                     parameters such as weight, rolling resistance and aerodynamics
                     and, in addition to weather and traffic conditions, as well as individual handling, can affect the fuel
-                    consumption, energy consumption, CO₂ emissions, range and performance values of a car.</p>
+                    consumption, energy consumption, CO₂ emissions, range and performance values of a car.
+                </p>
 
-                <p>** Important information about the all-electric Porsche models can be found <a className="underline" href="https://www.porsche.com/international/accessoriesandservice/porscheservice/vehicleinformation/bev/">here.</a>
+                <p>
+                    ** Important information about the all-electric
+                    Porsche models can be found <a className="underline" href="https://www.porsche.com/international/accessoriesandservice/porscheservice/vehicleinformation/bev/">here.</a>
                 </p>
             </div>
-
-            {/* Porsche Logo */}
 
             <div className="flex w-full justify-center items-center p-3 my-15">
                <img src={PorscheLogo} alt="porsche logo" width="250rem" style={{ filter: "invert(1)" }} />

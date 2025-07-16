@@ -14,7 +14,7 @@ const Button = ({
     const disabledStyle: string = disabled ? "opacity-50 cursor-not-allowed" : "";
 
     return (
-        <button className={`rounded-lg cursor-pointer ${sizeStyle} ${buttonStyle} transition ${className} ${disabledStyle}`} disabled={disabled} onClick={onClick}>
+        <button className={`rounded-lg cursor-pointer transition ${sizeStyle} ${buttonStyle} ${className} ${disabledStyle}`} disabled={disabled} onClick={onClick}>
             {children}
         </button>
     );
