@@ -1,7 +1,7 @@
-import Hero1 from "../../assets/images/hero-1.jpg";
-import Porsche911 from "../../assets/images/porsche-model-911.jpg";
-import PorscheTaycan from "../../assets/images/porsche-model-taycan.jpeg";
-import Porsche718 from "../../assets/images/porsche-model-718.jpeg";
+import Hero1 from "~/assets/images/taycan-hero.jpg";
+import Porsche911 from "~/assets/images/porsche-model-911.jpg";
+import PorscheTaycan from "~/assets/images/porsche-model-taycan.jpeg";
+import Porsche718 from "~/assets/images/porsche-model-718.jpeg";
 import Card from "~/components/Card";
 import Select from "~/components/Select";
 import type {CardProps, EngineModel} from "~/types";
@@ -55,22 +55,9 @@ export function HomePage() {
                             className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-b from-transparent to-black/60 pointer-events-none"/>
                         <div
                             className="absolute bottom-[10%] left-[10%] flex flex-col items-start justify-end font-bold text-white">
-                            <h1 className="text-4xl font-medium">Porsche Centar Zagreb</h1>
-                            <p className="text-md font-light">Welcome.</p>
+                            <h1 className="text-4xl md:text-5xl font-medium">More than a feeling</h1>
+                            <p className="text-2xl font-light">Welcome.</p>
                         </div>
-                    </div>
-                    <div
-                        className="grid grid-cols-8 px-5 py-5 items-center justify-center w-full bg-gray-800 text-white text-center"
-                    >
-                        {/*add some form of info*/}
-                        <h1>1</h1>
-                        <h1>2</h1>
-                        <h1>3</h1>
-                        <h1>4</h1>
-                        <h1>5</h1>
-                        <h1>6</h1>
-                        <h1>7</h1>
-                        <h1>8</h1>
                     </div>
                 </section>
 
