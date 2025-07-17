@@ -27,6 +27,10 @@
         @apply text-neutral-950 text-2xl w-full pl-4 py-3 hover:bg-neutral-300 transition duration-300 rounded-sm;
     }
 
+    .side-menu-link {
+        @apply flex items-center justify-between w-full;
+    }
+
     .hero-container {
         @apply relative flex
     }

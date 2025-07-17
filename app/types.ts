@@ -5,7 +5,7 @@ export type CardProps = {
     description?: string,
     image?: string,
     engineType?: "electric" | "hybrid" | "petrol";
-}
+};
 
 export type BadgeProps = {
     value: string;
@@ -31,13 +31,17 @@ export type SelectProps = {
 
 export type CardWrapperProps = {
     children: ReactNode;
-}
+};
 
 export type SideMenuProps = {
     isOpen: boolean;
     toggleMenu: () => void;
-}
+};
 
 export type NavBarProps = {
     toggleMenu: () => void;
+};
+
+export type SideMenuItemProps = {
+    label: string;
 };
