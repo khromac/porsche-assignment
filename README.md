@@ -103,7 +103,8 @@ Internally uses `Button` and `Badge`.
 `name` - title of the card  
 `description` - subtitle of the card  
 `image` - background image of the card  
-`engineType` - badge text
+`badgeText` - badge text
+`onClick` - call-action when card is clicked
 
 **Usage example:**
 
@@ -112,7 +113,8 @@ Internally uses `Button` and `Badge`.
         name="Sample 1"
         description="Sample description 1"
         image={SampleImage1}
-        engineType="variant1"
+        badgeText="variant1"
+        onClick={() => console.log("Card clicked")}
 />
 ```
 
@@ -132,14 +134,14 @@ Handles layout (vertical on mobile, horizontal/wrapped on desktop), spacing, and
           name="Sample 1"
           description="Sample description 1"
           image={SampleImage1}
-          engineType="variant1"
+          badgeText="variant1"
   />
 
   <Card
           name="Sample 2"
           description="Sample description 2"
           image={SampleImage2}
-          engineType="variant2"
+          badgeText="variant2"
   />
 </CardWrapper>
 ```

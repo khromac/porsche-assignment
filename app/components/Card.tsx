@@ -8,7 +8,8 @@ const Card = ({
     name = "Porsche 911 Carrera",
     description = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     image = Porsche911,
-    engineType = "electric",
+    badgeText = "electric",
+    onClick,
 }: CardProps) => {
     return (
         <div className="card-container">
@@ -21,11 +22,11 @@ const Card = ({
 
                 <div className="card-content">
                     <div className="flex flex-col gap-2 shrink-0 w-full">
-                        <Badge value={engineType} />
+                        <Badge value={badgeText} />
                         <h2 className="card-title">{name}</h2>
                         <div className="flex flex-col items-start w-full lg:flex-row lg:justify-between gap-2">
                             <p className="card-subtitle">{description}</p>
-                            <Button type="secondary" size="small">
+                            <Button type="secondary" size="small" onClick={onClick}>
                                 <i className="fa-solid fa-arrow-right"></i>
                             </Button>
                         </div>
@@ -37,4 +38,5 @@ const Card = ({
 };
 
 export default Card;
+
 

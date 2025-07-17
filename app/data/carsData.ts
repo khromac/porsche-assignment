@@ -2,7 +2,7 @@ import Porsche911 from "~/assets/images/porsche-model-911.jpg";
 import PorscheTaycan from "~/assets/images/porsche-model-taycan.jpeg";
 import Porsche718 from "~/assets/images/porsche-model-718.jpeg";
 import PorschePanamera from "~/assets/images/porsche-model-panamera.jpg";
-import type { CardProps, EngineModel } from "~/types";
+import type {CarModelProps, EngineModel} from "~/types";
 
 export const engineModels: Record<EngineModel, string> = {
     all: "All",
@@ -11,7 +11,7 @@ export const engineModels: Record<EngineModel, string> = {
     petrol: "Petrol",
 };
 
-export const carModels: Record<string, CardProps> = {
+export const carModels: Record<string, CarModelProps> = {
     "porsche-911": {
         name: "Porsche 911",
         description: "Iconic sports car with rear engine: 2 doors",

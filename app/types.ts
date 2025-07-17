@@ -1,10 +1,11 @@
 import type { ReactNode } from 'react';
 
 export type CardProps = {
-    name?: string,
-    description?: string,
-    image?: string,
-    engineType?: "electric" | "hybrid" | "petrol";
+    name?: string;
+    description?: string;
+    image?: string;
+    badgeText?: string;
+    onClick?: () => void;
 };
 
 export type BadgeProps = {
@@ -45,3 +46,10 @@ export type NavBarProps = {
 export type SideMenuItemProps = {
     label: string;
 };
+
+export type CarModelProps = {
+    name: string;
+    description: string;
+    image: string;
+    engineType: EngineModel;
+}
