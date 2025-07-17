@@ -119,6 +119,10 @@
        @apply flex w-full justify-center items-center p-3 my-15
     }
 
+    .nav-container {
+        @apply grid grid-cols-3 items-center py-4 px-5
+    }
+
     .link {
         @apply text-neutral-50 hover:bg-neutral-800 hover:rounded-sm transition duration-300;
     }
