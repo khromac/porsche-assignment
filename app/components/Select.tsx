@@ -8,15 +8,7 @@ const Select = ({
 }: SelectProps) => {
     return (
         <select
-            className={`
-                bg-gray-800 text-white 
-                border border-gray-600 
-                rounded-lg px-4 py-2 
-                focus:outline-none focus:ring-2 focus:ring-red-500 
-                hover:border-red-500
-                transition duration-150 ease-in-out
-                ${className}
-              `}
+            className={`select ${className}}`}
             onChange={(e) => onChange(e.target.value)}
             value={value}
         >
@@ -24,7 +16,7 @@ const Select = ({
                 <option
                     key={key}
                     value={key}
-                    className="bg-gray-800 text-white"
+                    className="option"
                 >
                     {label}
                 </option>
