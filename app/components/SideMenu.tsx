@@ -43,7 +43,6 @@ const SideMenu= ({
     );
 }
 
-
 export default SideMenu;
 
 const SideMenuItem = ({ label }: SideMenuItemProps) => {
