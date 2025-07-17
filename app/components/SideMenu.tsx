@@ -1,4 +1,4 @@
-import type {SideMenuProps} from "~/types";
+import type {SideMenuItemProps, SideMenuProps} from "~/types";
 import {useEffect, useRef} from "react";
 
 const SideMenu= ({
@@ -31,24 +31,12 @@ const SideMenu= ({
                 className={`side-menu ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
             >
                 <ul className="side-menu">
-                    <li className="side-menu-item">
-                        <a href="#" className="flex items-center justify-between w-full">Models <i className="fa-solid fa-arrow-right mr-5"></i></a>
-                    </li>
-                    <li className="side-menu-item">
-                        <a href="#" className="flex items-center justify-between w-full">Vehicle Purchase <i className="fa-solid fa-arrow-right mr-5"></i></a>
-                    </li>
-                    <li className="side-menu-item">
-                        <a href="#" className="flex items-center justify-between w-full">Services <i className="fa-solid fa-arrow-right mr-5"></i></a>
-                    </li>
-                    <li className="side-menu-item">
-                        <a href="#" className="flex items-center justify-between w-full">Experience <i className="fa-solid fa-arrow-right mr-5"></i></a>
-                    </li>
-                    <li className="side-menu-item">
-                        <a href="#" className="flex items-center justify-between w-full">Find a dealer <i className="fa-solid fa-arrow-right mr-5"></i></a>
-                    </li>
-                    <li className="side-menu-item">
-                        <a href="#" className="flex items-center justify-between w-full"> Account <i className="fa-solid fa-arrow-right mr-5"></i></a>
-                    </li>
+                    <SideMenuItem label="Models" />
+                    <SideMenuItem label="Vehicle Purchase" />
+                    <SideMenuItem label="Services" />
+                    <SideMenuItem label="Experience" />
+                    <SideMenuItem label="Find a dealer" />
+                    <SideMenuItem label="Account" />
                 </ul>
             </aside>
         </>
@@ -57,5 +45,12 @@ const SideMenu= ({
 
 export default SideMenu;
 
-
-
+const SideMenuItem = ({ label }: SideMenuItemProps) => {
+    return (
+        <li className="side-menu-item">
+            <a href="#" className="side-menu-link">
+                {label} <i className="fa-solid fa-arrow-right mr-5"></i>
+            </a>
+        </li>
+    );
+}

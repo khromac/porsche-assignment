@@ -1,34 +1,146 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", sans-serif;
+    --font-sans: "Inter", sans-serif;
 }
 
 @layer base {
-  h1 {
-    @apply text-3xl font-bold;
-  }
+    h1 {
+        @apply text-3xl font-bold;
+    }
 
-  h2 {
-      @apply text-2xl font-medium;
-  }
+    h2 {
+        @apply text-2xl font-medium;
+    }
 
-  h3 {
-      @apply text-xl font-semibold;
-  }
+    h3 {
+        @apply text-xl font-semibold;
+    }
 }
 
 @layer components {
-  .side-menu {
-    @apply bg-neutral-100 py-20 px-10 fixed top-0 left-0 w-96 h-full text-white z-50 transition-transform duration-300 flex flex-col items-start gap-3;
-  }
+    .side-menu {
+        @apply bg-neutral-100 py-20 px-10 fixed top-0 left-0 w-96 h-full text-white z-50 transition-transform duration-300 flex flex-col items-start gap-3;
+    }
 
-  .side-menu-item {
-    @apply text-neutral-950 text-2xl w-full pl-4 py-3 hover:bg-neutral-300 transition duration-300 rounded-sm;
-  }
+    .side-menu-item {
+        @apply text-neutral-950 text-2xl w-full pl-4 py-3 hover:bg-neutral-300 transition duration-300 rounded-sm;
+    }
+
+    .side-menu-link {
+        @apply flex items-center justify-between w-full;
+    }
+
+    .hero-container {
+        @apply relative flex
+    }
+
+    .hero-image {
+        @apply w-full h-[98dvh] object-cover shadow-lg
+    }
+
+    .hero-overlay {
+        @apply absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-b from-transparent to-black/60 pointer-events-none;
+    }
+
+    .hero-text-wrapper {
+        @apply absolute bottom-[10%] left-[10%] flex flex-col items-start justify-end font-bold text-white
+    }
+
+    .hero-text-title {
+        @apply text-4xl font-medium md:text-5xl lg:text-7xl
+    }
+
+    .hero-text-subtitle {
+        @apply text-2xl font-light md:text-3xl lg:text-4xl mt-2
+    }
+
+    .section-container {
+        @apply flex flex-col justify-center w-full
+    }
+
+    .section-title {
+        @apply text-left my-10 md:my-20 md:text-4xl md:text-center lg:text-7xl
+    }
+
+    .section-tooltip {
+        @apply flex flex-row items-center justify-between gap-4
+    }
+
+    .card-wrapper {
+        @apply flex flex-col justify-center items-center gap-5 overflow-x-auto lg:flex-row lg:flex-wrap
+    }
+
+    .card-container {
+        @apply transition-all duration-700 w-[300px] h-[400px] sm:w-[550px] sm:h-[550px] md:w-[600px] md:h-[650px] lg:min-w-[calc(50%-4rem)] lg:h-[500px] lg:flex-1 lg:hover:flex-[1.2] group-hover:lg:flex-[0.9] hover:duration-[1000ms] lg:hover:z-10
+    }
+
+    .card {
+        @apply w-full h-full bg-gray-100 rounded-lg shadow-lg flex flex-col items-start overflow-hidden relative
+    }
+
+    .card-image {
+        @apply w-full h-full object-cover object-center mx-auto
+    }
+
+    .card-content {
+        @apply absolute bottom-0 left-0 right-0 p-4 flex flex-col items-start justify-end w-full
+    }
+
+    .card-title {
+        @apply text-xl font-bold text-white
+    }
+
+    .card-subtitle {
+        @apply text-sm text-gray-200
+    }
+
+    .badge {
+        @apply px-3 py-1 rounded-lg bg-gray-200 text-neutral-800 uppercase text-xs font-semibold w-fit
+    }
+
+    .button-primary {
+        @apply bg-red-600 hover:bg-red-300 text-white
+    }
+
+    .disabled {
+        @apply opacity-50 hover:cursor-not-allowed
+    }
+
+    .button-secondary {
+        @apply bg-neutral-100 hover:bg-neutral-700 text-gray-700 hover:text-neutral-100
+    }
+
+    .footer-container {
+        @apply bg-black text-white flex flex-col gap-10 p-10 pb-0
+    }
+
+    .footer-section {
+        @apply flex flex-col gap-3
+    }
+
+    .footer-logo-container {
+       @apply flex w-full justify-center items-center p-3 my-15
+    }
+
+    .nav-container {
+        @apply grid grid-cols-3 items-center py-4 px-5
+    }
+
+    .link {
+        @apply text-neutral-50 hover:bg-neutral-800 hover:rounded-sm transition duration-300;
+    }
+
+    .select {
+        @apply bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500 hover:border-red-500 transition duration-150 ease-in-out
+    }
+
+    .option {
+        @apply bg-gray-800 text-white
+    }
 }
 
 html,
 body {
-  @apply bg-white ;
+    @apply bg-white ;
 }

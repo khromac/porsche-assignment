@@ -5,7 +5,7 @@ import type {NavBarProps} from "~/types";
 const NavBar = ({ toggleMenu }:NavBarProps) => {
 
     return (
-        <nav className="grid grid-cols-3 items-center py-4 px-5">
+        <nav className="nav-container">
             <div className="flex items-center gap-2 justify-self-start" onClick={toggleMenu}>
                 <i className="fa-solid fa-bars"></i>
                 <p className="hidden sm:block">Menu</p>

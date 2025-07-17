@@ -1,12 +1,12 @@
 import Hero1 from "~/assets/images/taycan-hero.jpg";
 import Card from "~/components/Card";
-import porsche911 from "~/assets/images/porsche-model-911.jpg";
 import Select from "~/components/Select";
 import { useEffect, useState } from "react";
 import { carModels, engineModels } from "~/data/carsData";
 import type { CardProps } from "~/types";
 import Button from "~/components/Button";
 import CardWrapper from "~/components/CardWrapper";
+import PorscheConcept from "~/assets/images/porsche-concept.jpg";
 
 export function HomePage() {
     const [filter, setFilter] = useState<string>("all");
@@ -18,7 +18,7 @@ export function HomePage() {
         const newCar: CardProps = {
             name: "Porsche Concept X",
             description: "Futuristic electric car.",
-            image: porsche911,
+            image: PorscheConcept,
             engineType: "electric",
         };
 
@@ -42,24 +42,23 @@ export function HomePage() {
 
     return (
         <main className="flex items-center justify-center flex-col gap-4">
-            {/* HERO SECTION */}
-            <section className="flex flex-col justify-center w-full">
-                <div className="relative flex">
-                    <img src={Hero1} alt="porsche dealership" className="w-full h-[98dvh] object-cover shadow-lg" />
-                    <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-b from-transparent to-black/60 pointer-events-none" />
-                    <div className="absolute bottom-[10%] left-[10%] flex flex-col items-start justify-end font-bold text-white">
-                        <h1 className="text-4xl md:text-5xl font-medium lg:text-7xl">More than a feeling</h1>
-                        <p className="text-2xl font-light">Welcome.</p>
+            <section className="section-container">
+                <div className="hero-container">
+                    <img src={Hero1} alt="porsche dealership" className="hero-image" />
+                    <div className="hero-overlay" />
+                    <div className="hero-text-wrapper">
+                        <h1 className="hero-text-title">More than a feeling</h1>
+                        <p className="hero-text-subtitle">Welcome.</p>
                     </div>
                 </div>
             </section>
 
-            <section className="flex flex-col justify-center w-full px-8 md:px-16 gap-10 mt-4 my-10">
-                <h1 className="text-2xl font-medium text-left my-10 md:my-20 md:text-4xl md:text-center lg:text-7xl">
+            <section className="section-container px-8 gap-10 mt-4 my-10 md:px-16">
+                <h2 className="section-title">
                     Where Your journey begins.
-                </h1>
+                </h2>
 
-                <div className="flex flex-row items-center justify-between gap-4">
+                <div className="section-tooltip">
                     <div className="flex flex-row items-center gap-4">
                         <p>Filter:</p>
                         <Select options={engineModels} onChange={setFilter} value={filter} />
