@@ -42,23 +42,23 @@ export function HomePage() {
 
     return (
         <main className="flex items-center justify-center flex-col gap-4">
-            <section className="flex flex-col justify-center w-full">
-                <div className="relative flex">
-                    <img src={Hero1} alt="porsche dealership" className="w-full h-[98dvh] object-cover shadow-lg" />
+            <section className="section-container">
+                <div className="hero-container">
+                    <img src={Hero1} alt="porsche dealership" className="hero-image" />
                     <div className="hero-overlay" />
-                    <div className="hero-text">
-                        <h1 className="text-4xl font-medium md:text-5xl lg:text-7xl">More than a feeling</h1>
-                        <p className="text-2xl font-light">Welcome.</p>
+                    <div className="hero-text-wrapper">
+                        <h1 className="hero-text-title">More than a feeling</h1>
+                        <p className="hero-text-subtitle">Welcome.</p>
                     </div>
                 </div>
             </section>
 
-            <section className="flex flex-col justify-center w-full px-8 gap-10 mt-4 my-10 md:px-16 ">
-                <h2 className="text-left my-10 md:my-20 md:text-4xl md:text-center lg:text-7xl">
+            <section className="section-container px-8 gap-10 mt-4 my-10 md:px-16">
+                <h2 className="section-title">
                     Where Your journey begins.
                 </h2>
 
-                <div className="flex flex-row items-center justify-between gap-4">
+                <div className="section-tooltip">
                     <div className="flex flex-row items-center gap-4">
                         <p>Filter:</p>
                         <Select options={engineModels} onChange={setFilter} value={filter} />

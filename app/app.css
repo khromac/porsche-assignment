@@ -27,12 +27,40 @@
         @apply text-neutral-950 text-2xl w-full pl-4 py-3 hover:bg-neutral-300 transition duration-300 rounded-sm;
     }
 
+    .hero-container {
+        @apply relative flex
+    }
+
+    .hero-image {
+        @apply w-full h-[98dvh] object-cover shadow-lg
+    }
+
     .hero-overlay {
         @apply absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-b from-transparent to-black/60 pointer-events-none;
     }
 
-    .hero-text {
+    .hero-text-wrapper {
         @apply absolute bottom-[10%] left-[10%] flex flex-col items-start justify-end font-bold text-white
+    }
+
+    .hero-text-title {
+        @apply text-4xl font-medium md:text-5xl lg:text-7xl
+    }
+
+    .hero-text-subtitle {
+        @apply text-2xl font-light md:text-3xl lg:text-4xl mt-2
+    }
+
+    .section-container {
+        @apply flex flex-col justify-center w-full
+    }
+
+    .section-title {
+        @apply text-left my-10 md:my-20 md:text-4xl md:text-center lg:text-7xl
+    }
+
+    .section-tooltip {
+        @apply flex flex-row items-center justify-between gap-4
     }
 
     .link {
