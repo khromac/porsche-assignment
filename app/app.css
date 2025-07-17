@@ -71,6 +71,18 @@
         @apply px-3 py-1 rounded-lg bg-gray-200 text-neutral-800 uppercase text-xs font-semibold w-fit
     }
 
+    .button-primary {
+        @apply bg-red-600 hover:bg-red-300 text-white
+    }
+
+    .disabled {
+        @apply opacity-50 hover:cursor-not-allowed
+    }
+
+    .button-secondary {
+        @apply bg-neutral-100 hover:bg-neutral-700 text-gray-700 hover:text-neutral-100
+    }
+
     .link {
         @apply text-neutral-50 hover:bg-neutral-800 hover:rounded-sm transition duration-300;
     }
