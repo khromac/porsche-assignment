@@ -1,12 +1,12 @@
 import Hero1 from "~/assets/images/taycan-hero.jpg";
 import Card from "~/components/Card";
-import porsche911 from "~/assets/images/porsche-model-911.jpg";
 import Select from "~/components/Select";
 import { useEffect, useState } from "react";
 import { carModels, engineModels } from "~/data/carsData";
 import type { CardProps } from "~/types";
 import Button from "~/components/Button";
 import CardWrapper from "~/components/CardWrapper";
+import PorscheConcept from "~/assets/images/porsche-concept.jpg";
 
 export function HomePage() {
     const [filter, setFilter] = useState<string>("all");
@@ -18,7 +18,7 @@ export function HomePage() {
         const newCar: CardProps = {
             name: "Porsche Concept X",
             description: "Futuristic electric car.",
-            image: porsche911,
+            image: PorscheConcept,
             engineType: "electric",
         };
 

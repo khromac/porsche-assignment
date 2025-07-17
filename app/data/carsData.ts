@@ -32,7 +32,7 @@ export const carModels: Record<string, CardProps> = {
     },
     "porsche-panamera": {
         name: "Porsche Panamera",
-        description: "Precise mid-engine sports car with a",
+        description: "Luxury sedan with high level of comfort",
         image: PorschePanamera,
         engineType: "hybrid",
     },
