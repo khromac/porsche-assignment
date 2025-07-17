@@ -14,7 +14,7 @@ export function HomePage() {
     const [filteredCars, setFilteredCars] = useState<CardProps[]>([]);
 
     const handleAddModel = () => {
-        const newId = "porsche-concept-x";
+        const newId = "porsche-concept-x" + Math.random().toString(36).substring(2, 15);
         const newCar: CardProps = {
             name: "Porsche Concept X",
             description: "Futuristic electric car.",
