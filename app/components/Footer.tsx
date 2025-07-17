@@ -47,7 +47,7 @@ const Footer = () => {
                         <i className="fa-solid fa-globe text-2xl"></i>
                         <p>International / English</p>
                     </div>
-                    <p className="underline">Change</p>
+                    <a className="link underline" href="#">Change</a>
                 </div>
             </div>
 
@@ -80,7 +80,7 @@ const Footer = () => {
                 <h2>Company</h2>
                 <div className="flex flex-wrap gap-10 w-full">
                     {companyItems.map((item, index) => (
-                        <p key={index} className="">{item}</p>
+                        <a key={index} href="#" className="link">{item}</a>
                     ))}
                 </div>
             </div>
@@ -104,7 +104,7 @@ const Footer = () => {
 
                 <p>
                     ** Important information about the all-electric
-                    Porsche models can be found <a className="underline" href="https://www.porsche.com/international/accessoriesandservice/porscheservice/vehicleinformation/bev/">here.</a>
+                    Porsche models can be found <a className="link underline" href="https://www.porsche.com/international/accessoriesandservice/porscheservice/vehicleinformation/bev/">here.</a>
                 </p>
             </div>
 

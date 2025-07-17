@@ -34,6 +34,10 @@
     .hero-text {
         @apply absolute bottom-[10%] left-[10%] flex flex-col items-start justify-end font-bold text-white
     }
+
+    .link {
+        @apply text-neutral-50 hover:bg-neutral-800 hover:rounded-sm transition duration-300;
+    }
 }
 
 html,
