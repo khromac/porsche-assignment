@@ -3,19 +3,19 @@ import Card from "~/components/Card";
 import Select from "~/components/Select";
 import { useEffect, useState } from "react";
 import { carModels, engineModels } from "~/data/carsData";
-import type { CardProps } from "~/types";
+import type {CarModelProps} from "~/types";
 import Button from "~/components/Button";
 import CardWrapper from "~/components/CardWrapper";
 import PorscheConcept from "~/assets/images/porsche-concept.jpg";
 
 export function HomePage() {
     const [filter, setFilter] = useState<string>("all");
-    const [carList, setCarList] = useState<Record<string, CardProps>>(carModels);
-    const [filteredCars, setFilteredCars] = useState<CardProps[]>([]);
+    const [carList, setCarList] = useState<Record<string, CarModelProps>>(carModels);
+    const [filteredCars, setFilteredCars] = useState<CarModelProps[]>([]);
 
     const handleAddModel = () => {
         const newId = "porsche-concept-x" + Math.random().toString(36).substring(2, 15);
-        const newCar: CardProps = {
+        const newCar: CarModelProps = {
             name: "Porsche Concept X",
             description: "Futuristic electric car.",
             image: PorscheConcept,
@@ -73,7 +73,7 @@ export function HomePage() {
                             name={model.name}
                             description={model.description}
                             image={model.image}
-                            engineType={model.engineType}
+                            badgeText={model.engineType}
                         />
                     ))}
                 </CardWrapper>
